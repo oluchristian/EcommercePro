@@ -27,7 +27,10 @@
                    <a class="nav-link" href="contact.html">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url('show_cart') }}">Cart</a>
+                  <a class="nav-link" href="{{ url('show_cart') }}">Order</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="{{ url('show_order') }}">Cart</a>
                </li>
                 <form class="form-inline">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
