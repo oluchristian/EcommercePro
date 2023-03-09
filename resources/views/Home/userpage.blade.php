@@ -42,6 +42,54 @@
       @include('Home.product')
       <!-- end product section -->
 
+      {{-- comment and reply system starts here --}}
+
+      <div style="text-align: center; padding-bottom:30px;">
+         <h1 style="font-size: 30px; text-align: center; padding-top:20px; padding-bottom:20px;">Comments</h1>
+
+         <form action="">
+            <textarea style="height: 150px; width:600px" name="" placeholder="Comment Something Here"></textarea>
+            <br>
+            <a class="btn btn-primary" href="">Comment</a>
+         </form>
+
+         
+      </div>
+      <div style="padding-left: 20%;">
+            <h1 style="font-size: 20px; padding-bottom: 20px">All Comments</h1>
+
+            <div>
+               <b>Oluchukwu</b>
+               <p>This is my first comment</p>
+               <a href="javascript::void(0);" onclick="reply(this)">Reply</a>
+            </div>
+
+            <div>
+               <b>Shakil</b>
+               <p>This is my 2nd comment</p>
+               <a href="javascript::void(0);" onclick="reply(this)">Reply</a>
+            </div>
+
+            <div>
+               <b>Alex</b>
+               <p>This is my 3rd comment</p>
+               <a href="javascript::void(0);" onclick="reply(this)">Reply</a>
+            </div>
+
+            <div style="display: none;" class="replyDiv">
+               <textarea style="height: 100px; width:500px;"  placeholder="write something here"></textarea>
+               <br>
+               <a href="" class="btn btn-primary">Reply</a>
+            </div>
+
+         </div>
+
+         
+
+
+
+      {{-- comment and reply system starts here --}}
+
       <!-- subscribe section -->
       @include('Home.subscribe')
       <!-- end subscribe section -->
@@ -58,6 +106,14 @@
          
          </p>
       </div>
+
+      <script type="text/javascript">
+         function reply(caller)
+         {
+            $('.replyDiv').insertAfter($(caller));
+            $('.replyDiv').show();
+         }
+      </script>
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->

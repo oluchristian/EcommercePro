@@ -206,4 +206,13 @@ class HomeController extends Controller
             return redirect('login');
         }
     }
+
+    public function cancel_order ($id)
+    {
+        $order = Order::find($id);
+        $order->delivery_status = 'You cancelled the order';
+        $order->save();
+
+        return redirect()->back();
+    }
 }
