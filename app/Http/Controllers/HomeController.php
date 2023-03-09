@@ -190,4 +190,20 @@ class HomeController extends Controller
               
         return back();
     }
+
+    public function show_order ()
+    {
+        if (Auth::id()) {
+            
+            $user = Auth::user();
+
+            $userid = $user->id;
+            $order = Order::where('user_id', $userid)->get();
+            return view('home.order', compact('order'));
+        }
+        else
+        {
+            return redirect('login');
+        }
+    }
 }
