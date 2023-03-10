@@ -13,13 +13,13 @@
       <link rel="shortcut icon" href="images/favicon.png" type="">
       <title>Famms - Fashion HTML Template</title>
       <!-- bootstrap core css -->
-      <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
+      <link rel="stylesheet" type="text/css" href="{{ asset('home/css/bootstrap.css') }}" />
       <!-- font awesome style -->
-      <link href="home/css/font-awesome.min.css" rel="stylesheet" />
+      <link href="{{ asset('home/css/font-awesome.min.css') }}" rel="stylesheet" />
       <!-- Custom styles for this template -->
-      <link href="home/css/style.css" rel="stylesheet" />
+      <link href="{{ asset("home/css/style.css") }}" rel="stylesheet" />
       <!-- responsive style -->
-      <link href="home/css/responsive.css" rel="stylesheet" />
+      <link href="{{ asset("home/css/responsive.css") }}" rel="stylesheet" />
 
       <style>
         .center
@@ -57,6 +57,7 @@
                     <th class="th_deg">Payment Status</th>
                     <th class="th_deg">Delivery Status</th>
                     <th class="th_deg">Image</th>
+                    <th class="th_deg">Cancel Order</th>
                 </tr>
 
                 
@@ -69,6 +70,15 @@
                     <td>{{ $order->delivery_status }}</td>
                     <td>
                         <img height="100px" width="200px" src="product/{{ $order->image }}" alt="">
+                    </td>
+
+                    <td>
+                        @if ($order->delivery_status == 'processing')
+                        <a onclick="return confirm('Are you sure to cancel this order?')" href="{{ url('cancel_order', $order->id) }}" class="btn btn-danger">Cancel Order</a>
+                        @else
+                        <p style="color: blue;">Not Allowed</p>
+                        @endif
+                        
                     </td>
                     </tr>
                     @endforeach

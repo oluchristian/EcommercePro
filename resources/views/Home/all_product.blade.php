@@ -2,7 +2,6 @@
 <html>
    <head>
       <!-- Basic -->
-      <!-- Basic -->
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <!-- Mobile Metas -->
@@ -26,21 +25,11 @@
       <div class="hero_area">
          <!-- header section strats -->
          @include('Home.header')
-         <!-- end header section -->
-         <!-- slider section -->
-         @include('Home.slider')
-         <!-- end slider section -->
-      </div>
+
       <!-- why section -->
-      @include('Home.why')
-      <!-- end why section -->
-      
-      <!-- arrival section -->
-      @include('Home.new_arrival')
-      <!-- end arrival section -->
-      
+     
       <!-- product section -->
-      @include('Home.product')
+      @include('Home.product_view')
       <!-- end product section -->
 
       {{-- comment and reply system starts here --}}
@@ -103,15 +92,7 @@
 
       {{-- comment and reply system starts here --}}
 
-      <!-- subscribe section -->
-      @include('Home.subscribe')
-      <!-- end subscribe section -->
-      <!-- client section -->
-      @include('Home.client')
-      <!-- end client section -->
-      <!-- footer start -->
-      @include('Home.footer')
-      <!-- footer end -->
+
       <div class="cpy_">
          <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
          
